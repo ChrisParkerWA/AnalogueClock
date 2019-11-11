@@ -19,10 +19,10 @@ struct MinuteHand: View {
                     .frame(width: 300, height: 2, alignment: .center)
                     .foregroundColor(.clear)
                 Rectangle() // minutes
-                    .frame(width: 100, height: 2)
+                    .frame(width: 130, height: 2)
                     .foregroundColor(.white)
             }
-            .offset(x: 40)
+            .offset(x: 75)
         }
     }
 }

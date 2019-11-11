@@ -15,11 +15,11 @@ struct HourHand: View {
         ZStack {
             Group {
                 Rectangle()
-                    .frame(width: 300, height: 2, alignment: .center)
+                    .frame(width: 300, height: 3, alignment: .center)
                     .foregroundColor(.clear)
                 Rectangle() // hours
-                .frame(width: 60, height: 2)
-                .foregroundColor(.red)
+                .frame(width: 60, height: 3)
+                .foregroundColor(.white)
             }
             .offset(x: 40)
         }
