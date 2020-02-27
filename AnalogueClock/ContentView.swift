@@ -18,15 +18,15 @@ struct SquareView: ViewModifier {
             .background(Color.white)
             .foregroundColor(Color.black)
             .font(.headline)
-            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)))
-            .overlay(RoundedRectangle(cornerSize: CGSize(width: 1, height: 1))
+            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 3, height: 3)))
+            .overlay(RoundedRectangle(cornerSize: CGSize(width: 3, height: 3))
             .stroke(Color.black))
             .opacity(1)
             .padding(2)
-            .overlay(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5))
-            .stroke(Color.blue)
-            .blur(radius: 3)
-                .opacity(0.6))
+//            .overlay(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5))
+//            .stroke(Color.blue)
+//            .blur(radius: 3)
+//                .opacity(0.6))
     }
 }
 

@@ -19,30 +19,11 @@ struct ClockFace: View {
                 RadialGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), center: .center, startRadius: 5, endRadius: 500)
                     .scaleEffect(1.5)
                 
-                //  Outer intervals
-                Group {
-                    SmallDots()
-                        .rotationEffect(.degrees(6))
-                    SmallDots()
-                        .rotationEffect(.degrees(12))
-                    SmallDots()
-                        .rotationEffect(.degrees(18))
-                    SmallDots()
-                        .rotationEffect(.degrees(24))
-                    SmallDots()
-                        .rotationEffect(.degrees(36))
-                    SmallDots()
-                        .rotationEffect(.degrees(42))
-                    SmallDots()
-                        .rotationEffect(.degrees(48))
-                    SmallDots()
-                        .rotationEffect(.degrees(54))
-                }
-                
+                //  Small Dots representing the minute intervals.
+                SmallDots()
+ 
                 //  Large Dots representing the 5 minute intervals and the Hours
                 LargeDots()
-                LargeDots()
-                    .rotationEffect(.degrees(30))
                 
             }
         }
@@ -51,74 +32,28 @@ struct ClockFace: View {
 
 struct SmallDots: View {
     var body: some View {
-        Group {
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 2, maxHeight: 2)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(0))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 2, maxHeight: 2)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(60))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 2, maxHeight: 2)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(120))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 2, maxHeight: 2)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(180))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 2, maxHeight: 2)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(240))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 2, maxHeight: 2)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(300))
+        ZStack {
+            ForEach(0..<60) { dot in
+                Circle()
+                    .frame(width: 2, height: 2)
+                    .offset(y: -150)
+                    .foregroundColor(.white)
+                    .rotationEffect(.degrees(Double(dot) * 6))
+            }
         }
     }
 }
 
 struct LargeDots: View {
     var body: some View {
-        Group {
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 8, maxHeight: 8)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(0))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 8, maxHeight: 8)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(60))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 8, maxHeight: 8)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(120))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 8, maxHeight: 8)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(180))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 8, maxHeight: 8)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(240))
-            Circle()
-                .offset(y: -150)
-                .frame(maxWidth: 8, maxHeight: 8)
-                .foregroundColor(.white)
-                .rotationEffect(.degrees(300))
+        ZStack {
+            ForEach(0..<12) { dot in
+                Circle()
+                    .frame(width: 8, height: 8)
+                    .offset(y: -150)
+                    .foregroundColor(.white)
+                    .rotationEffect(.degrees(Double(dot) * 30))
+            }
         }
     }
 }
